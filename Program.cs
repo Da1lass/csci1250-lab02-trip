@@ -6,16 +6,11 @@
  * Description: Prints a greeting and a short introduction to the console.
  */
 
-// input variables for gasCalc
 double roundTripMiles; 
 double milesPerGallon;
 decimal pricePerGallon;
-
-//calculation and output variables for gasCalc
 double gallonsNeeded;
 decimal fuelCost;
-
-//Reading gasCalc inputs
 
 System.Console.Write("Round miles? ");
 roundTripMiles = Convert.ToDouble(System.Console.ReadLine());
@@ -30,27 +25,21 @@ System.Console.WriteLine("");
 System.Console.Write("Price per gallon? ");
 pricePerGallon = Convert.ToDecimal(System.Console.ReadLine());
 
-//Calculating cost
 gallonsNeeded = roundTripMiles / milesPerGallon;
 fuelCost = Convert.ToDecimal(gallonsNeeded) * pricePerGallon;
 
-//Printing gasCalc Outputs
 System.Console.WriteLine("");
 System.Console.WriteLine($"Gallons needed: {gallonsNeeded.ToString("F2")}");
 System.Console.WriteLine($"Fuel Cost: {fuelCost.ToString("C")}");
 
-// input variables for pizzaParty
 int peopleAttending;
 int pizzasNeeded;
 decimal pricePerPizza;
-
-//calculation and output variables for gasCalc
 int totalSLices;
 double slicePerPerson;
 decimal totalPizzaCost;
 const int SLICES_PER_PIZZA = 8;
 
-//Reading pizzaParty inputs
 System.Console.Write("How many people are attending? ");
 peopleAttending = Convert.ToInt32(System.Console.ReadLine());
 
@@ -64,13 +53,33 @@ System.Console.WriteLine("");
 System.Console.Write("Price per pizza? ");
 pricePerPizza = Convert.ToDecimal(System.Console.ReadLine());
 
-//Calculating cost
 totalSLices = pizzasNeeded * SLICES_PER_PIZZA;
 slicePerPerson = totalSLices / peopleAttending;
 totalPizzaCost = pizzasNeeded * pricePerPizza;
 
-//Printing gasCalc Outputs
 System.Console.WriteLine("");
 System.Console.WriteLine($"Total slices: {totalSLices.ToString("")}");
-System.Console.WriteLine($"Slices per person: {fuelCost.ToString("F2")}");
+System.Console.WriteLine($"Slices per person: {slicePerPerson.ToString("F2")}");
 System.Console.WriteLine($"Pizza Cost: {totalPizzaCost.ToString("C")}");
+
+int hoursWorkedThisWeek;
+decimal hourlyWage; 
+const decimal TAX_RATE = 0.18M;
+decimal grossPay;
+decimal taxWithHeld;
+decimal moneyRecievedInPaycheck;
+
+System.Console.Write("How many hours did you work this week? ");
+hoursWorkedThisWeek = Convert.ToInt32(System.Console.Read());
+
+System.Console.WriteLine("What is your hourly pay? ");
+hourlyWage = Convert.ToDecimal(System.Console.ReadLine());
+
+grossPay = hourlyWage * hoursWorkedThisWeek;
+taxWithHeld = grossPay * TAX_RATE;
+moneyRecievedInPaycheck = grossPay - taxWithHeld;
+
+System.Console.WriteLine("");
+System.Console.WriteLine($"Gross pay: {grossPay.ToString("C")}");
+System.Console.WriteLine($"Tax withheld: {taxWithHeld.ToString("C")}");
+System.Console.WriteLine($"Take home pay: {moneyRecievedInPaycheck.ToString("C")}");
