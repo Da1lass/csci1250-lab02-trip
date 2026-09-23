@@ -70,9 +70,9 @@ decimal taxWithHeld;
 decimal moneyRecievedInPaycheck;
 
 System.Console.Write("How many hours did you work this week? ");
-hoursWorkedThisWeek = Convert.ToInt32(System.Console.Read());
+hoursWorkedThisWeek = Convert.ToInt32(System.Console.ReadLine());
 
-System.Console.WriteLine("What is your hourly pay? ");
+System.Console.Write("What is your hourly pay? ");
 hourlyWage = Convert.ToDecimal(System.Console.ReadLine());
 
 grossPay = hourlyWage * hoursWorkedThisWeek;
@@ -83,3 +83,18 @@ System.Console.WriteLine("");
 System.Console.WriteLine($"Gross pay: {grossPay.ToString("C")}");
 System.Console.WriteLine($"Tax withheld: {taxWithHeld.ToString("C")}");
 System.Console.WriteLine($"Take home pay: {moneyRecievedInPaycheck.ToString("C")}");
+
+decimal tripTotalCost;
+decimal CostPerPerson;
+decimal moneyRecievedInPaycheckPerHour;
+double hoursNeededToWorkToPayYourPart;
+
+tripTotalCost = fuelCost + totalPizzaCost;
+CostPerPerson = tripTotalCost / peopleAttending;
+moneyRecievedInPaycheckPerHour = moneyRecievedInPaycheck / hoursWorkedThisWeek;
+hoursNeededToWorkToPayYourPart = Convert.ToDouble(CostPerPerson / moneyRecievedInPaycheckPerHour);
+
+System.Console.WriteLine($"Trip total: {tripTotalCost.ToString("C")}");
+System.Console.WriteLine($"Cost per person: {CostPerPerson.ToString("C")}");
+System.Console.WriteLine($"Take home pay per hour: {moneyRecievedInPaycheckPerHour.ToString("C")}");
+System.Console.WriteLine($"Hours you must work to pay for your portion: {hoursNeededToWorkToPayYourPart.ToString("F2")}");
