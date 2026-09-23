@@ -3,7 +3,7 @@
  * Course: CSCI 1250, Section 001
  * Assignment: Lab 2, Trip Calculator
  * Date: September 23, 2026
- * Description: Prints a greeting and a short introduction to the console.
+ * Description: Calculates information about trip costs.
  */
 
 double roundTripMiles; 
